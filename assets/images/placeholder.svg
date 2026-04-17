@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Placeholder image">
+  <rect width="320" height="240" fill="#eceff3"/>
+  <rect x="0.5" y="0.5" width="319" height="239" fill="none" stroke="#cfd4dc"/>
+  <g fill="#8a93a0" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="160" y="120" font-size="22" font-weight="600">Image</text>
+    <text x="160" y="148" font-size="12">Replace me in /assets/images/</text>
+  </g>
+</svg>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识语境 · 研究海报</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F7F8FA;
+    --surface-warm: #FBF9F7;
+    --border: #E8E9ED;
+    --border-light: #F0F1F4;
+    --text-primary: #1A1D26;
+    --text-secondary: #5A5F72;
+    --text-dim: #9499A8;
+    --text-hint: #B8BCC8;
+    --accent-blue: #2B6CB0;
+    --accent-blue-light: #EBF2FA;
+    --accent-orange: #C4501C;
+    --accent-orange-light: #FDF0EA;
+    --accent-orange-mid: #F8DDD0;
+    --accent-green: #276749;
+    --accent-green-light: #EDF7F1;
+    --accent-teal: #1A7F7A;
+    --accent-teal-light: #E9F7F6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #F0F1F4;
+    color: var(--text-primary);
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .poster {
+    width: 920px;
+    max-width: 100%;
+    background: var(--bg);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    padding: 52px 48px 44px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    text-align: center;
+    margin-bottom: 44px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent-blue);
+    margin-bottom: 14px; font-weight: 500;
+  }
+  .header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900; font-size: 30px;
+    line-height: 1.45; color: var(--text-primary);
+  }
+  .header h1 .hl { color: var(--accent-blue); }
+  .header .core-thesis {
+    margin-top: 18px; padding: 12px 24px;
+    background: var(--surface-warm);
+    border: 1px solid #EDE8E2; border-radius: 6px;
+    display: inline-block;
+  }
+  .core-thesis .ct-text {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700; font-size: 16px;
+    color: var(--accent-orange); line-height: 1.5;
+  }
+  .core-thesis .ct-sub {
+    font-size: 13px; color: var(--text-secondary);
+    margin-top: 4px; font-weight: 300;
+  }
+
+  /* ===== SECTION ===== */
+  .section { margin-bottom: 40px; }
+  .section-head {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 500;
+    width: 22px; height: 22px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%; flex-shrink: 0;
+  }
+  .section-num.blue { background: var(--accent-blue-light); color: var(--accent-blue); }
+  .section-num.orange { background: var(--accent-orange-light); color: var(--accent-orange); }
+  .section-num.teal { background: var(--accent-teal-light); color: var(--accent-teal); }
+  .section-num.gray { background: var(--surface); color: var(--text-dim); }
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700; font-size: 18px;
+  }
+  .section-line { flex: 1; height: 1px; background: var(--border-light); }
+  .section-desc {
+    font-size: 13.5px; color: var(--text-secondary);
+    line-height: 1.75; margin-bottom: 18px; max-width: 800px;
+  }
+  .section-desc strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ===== OBSERVATION CARDS ===== */
+  .obs-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+  .obs-card {
+    border: 1px solid var(--border); border-radius: 10px;
+    position: relative; overflow: hidden;
+  }
+  .obs-card .card-zone { padding: 14px 16px; }
+  .obs-card .card-zone-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+    font-weight: 500; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .obs-card .card-zone-label::after {
+    content: ''; flex: 1; height: 1px;
+  }
+  /* Per-card color: semantic zone */
+  .obs-card.c1 .card-zone.sem { border-left: 3px solid var(--accent-blue); }
+  .obs-card.c2 .card-zone.sem { border-left: 3px solid var(--accent-orange); }
+  .obs-card.c3 .card-zone.sem { border-left: 3px solid var(--accent-green); }
+  .obs-card.c1 .card-zone.sem .card-zone-label { color: var(--accent-blue); }
+  .obs-card.c1 .card-zone.sem .card-zone-label::after { background: var(--accent-blue-light); }
+  .obs-card.c2 .card-zone.sem .card-zone-label { color: var(--accent-orange); }
+  .obs-card.c2 .card-zone.sem .card-zone-label::after { background: var(--accent-orange-light); }
+  .obs-card.c3 .card-zone.sem .card-zone-label { color: var(--accent-green); }
+  .obs-card.c3 .card-zone.sem .card-zone-label::after { background: var(--accent-green-light); }
+  .obs-card .card-content {
+    font-size: 13.5px; line-height: 1.65; color: var(--text-primary);
+  }
+  /* Context zone */
+  .card-zone.ctx {
+    background: var(--surface); border-top: 1px solid var(--border-light);
+  }
+  .card-zone.ctx .card-zone-label { color: var(--text-dim); }
+  .card-zone.ctx .card-zone-label::after { background: var(--border-light); }
+  .ctx-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .ctx-tag {
+    font-size: 10.5px; padding: 2.5px 8px;
+    border-radius: 3px; font-weight: 500;
+  }
+  .ctx-tag .tl { font-weight: 400; margin-right: 3px; }
+  .obs-card.c1 .ctx-tag { background: var(--accent-blue-light); color: var(--accent-blue); }
+  .obs-card.c1 .ctx-tag .tl { color: rgba(43,108,176,0.5); }
+  .obs-card.c2 .ctx-tag { background: var(--accent-orange-light); color: var(--accent-orange); }
+  .obs-card.c2 .ctx-tag .tl { color: rgba(196,80,28,0.45); }
+  .obs-card.c3 .ctx-tag { background: var(--accent-green-light); color: var(--accent-green); }
+  .obs-card.c3 .ctx-tag .tl { color: rgba(39,103,73,0.45); }
+
+  /* Register theory callout */
+  .theory-callout {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: var(--surface-warm);
+    border: 1px solid #EDE8E2;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .theory-callout .tc-icon {
+    width: 36px; height: 36px;
+    background: #EDE8E2;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent-orange);
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900; font-size: 16px;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .theory-callout .tc-text {
+    font-size: 13px; color: var(--text-secondary); line-height: 1.75;
+  }
+  .theory-callout .tc-text strong { color: var(--text-primary); font-weight: 600; }
+  .theory-callout .tc-ref {
+    font-size: 11.5px; color: var(--text-dim); margin-top: 6px; font-style: italic;
+  }
+  .register-mapping {
+    display: flex; gap: 20px; margin-top: 10px; flex-wrap: wrap;
+  }
+  .reg-map-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11.5px; color: var(--text-secondary);
+  }
+  .reg-map-arrow { color: var(--text-hint); font-size: 10px; }
+  .reg-map-hl { font-weight: 600; color: var(--accent-blue); }
+
+  /* ===== COMPARISON ===== */
+  .comparison {
+    display: grid; grid-template-columns: 1fr 36px 1fr; align-items: stretch;
+  }
+  .comp-panel { border-radius: 10px; padding: 22px 20px; }
+  .comp-panel.baseline { background: var(--surface); border: 1px solid var(--border); }
+  .comp-panel.target { background: var(--accent-teal-light); border: 1px solid #C5E5E3; }
+  .comp-arrow {
+    display: flex; align-items: center; justify-content: center; color: var(--text-hint);
+  }
+  .comp-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px;
+    display: inline-block; margin-bottom: 10px; font-weight: 500;
+  }
+  .baseline .comp-badge { background: #EDEEF2; color: var(--text-dim); }
+  .target .comp-badge { background: rgba(26,127,122,0.12); color: var(--accent-teal); }
+  .comp-title {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700; font-size: 15px; margin-bottom: 8px;
+  }
+  .comp-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px; }
+
+  .token-seq {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 5px;
+    padding: 12px 14px; background: rgba(255,255,255,0.7);
+    border-radius: 6px; font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; border: 1px solid rgba(0,0,0,0.04);
+  }
+  .baseline .token-seq { background: var(--bg); }
+  .tk { padding: 4px 8px; border-radius: 4px; font-weight: 500; white-space: nowrap; }
+  .tk.plain { background: #EDEEF2; color: var(--text-secondary); }
+  .tk.sep { color: var(--text-hint); font-size: 10px; padding: 4px 2px; }
+  .tk.cb { background: var(--accent-blue-light); color: var(--accent-blue); border-left: 2.5px solid var(--accent-blue); }
+  .tk.co { background: var(--accent-orange-light); color: var(--accent-orange); border-left: 2.5px solid var(--accent-orange); }
+  .tk.cg { background: var(--accent-green-light); color: var(--accent-green); border-left: 2.5px solid var(--accent-green); }
+
+  .comp-note {
+    display: flex; align-items: flex-start; gap: 7px;
+    margin-top: 12px; font-size: 11.5px; line-height: 1.5;
+  }
+  .baseline .comp-note { color: var(--text-dim); }
+  .target .comp-note { color: var(--accent-teal); }
+  .comp-note svg { flex-shrink: 0; margin-top: 1px; }
+
+  /* ===== ROADMAP (SINGLE COLUMN) ===== */
+  .rm-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+    margin-bottom: 8px;
+  }
+  .rm-col-head {
+    font-weight: 700; font-size: 14px;
+    margin-bottom: 12px; padding-bottom: 8px;
+    border-bottom: 2px solid; display: inline-block;
+  }
+  .rm-col-head.model { border-color: var(--accent-blue); color: var(--accent-blue); }
+  .rm-col-head.data { border-color: var(--accent-teal); color: var(--accent-teal); }
+
+  /* Single-column research item: image left, text right */
+  .rm-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 3px solid;
+  }
+  .rm-item.blue { border-left-color: var(--accent-blue); }
+  .rm-item.teal { border-left-color: var(--accent-teal); }
+  .rm-item.orange { border-left-color: var(--accent-orange); }
+
+  .rm-img-placeholder {
+    width: 140px; height: 140px;
+    background: var(--border-light);
+    border: 1.5px dashed var(--border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--text-hint);
+    font-size: 10.5px;
+    text-align: center;
+    line-height: 1.4;
+    padding: 8px;
+  }
+  .rm-img-placeholder svg { opacity: 0.45; }
+
+  .rm-text {}
+  .rm-item .rm-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-dim); margin-bottom: 4px; font-weight: 500;
+  }
+  .rm-item .rm-name {
+    font-weight: 700; font-size: 14px; margin-bottom: 6px;
+    color: var(--text-primary); line-height: 1.4;
+  }
+  .rm-tag {
+    display: inline-block; font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px; padding: 1.5px 6px; border-radius: 3px;
+    margin-left: 4px; font-weight: 500; vertical-align: middle;
+  }
+  .rm-tag.acl { background: var(--accent-blue-light); color: var(--accent-blue); }
+  .rm-item .rm-desc {
+    font-size: 12.5px; color: var(--text-secondary); line-height: 1.65;
+  }
+
+  .rm-connector {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 11px; color: var(--text-dim);
+    padding-left: 8px; margin-bottom: 12px;
+  }
+  .rm-connector svg { flex-shrink: 0; }
+
+  /* Benefits */
+  .benefits {
+    display: flex; gap: 14px; margin-top: 16px;
+  }
+  .bf-card {
+    flex: 1; padding: 14px 16px;
+    border-radius: 8px; border: 1px solid var(--border); background: var(--bg);
+  }
+  .bf-card .bf-dot {
+    width: 8px; height: 8px; border-radius: 2px;
+    display: inline-block; margin-right: 6px; vertical-align: middle;
+  }
+  .bf-dot.bl { background: var(--accent-blue); }
+  .bf-dot.gr { background: var(--accent-green); }
+  .bf-card .bf-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+  .bf-card .bf-desc { font-size: 11.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ===== FAQ ===== */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .faq-item {
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .faq-q {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    line-height: 1.5;
+    display: flex;
+    gap: 8px;
+  }
+  .faq-q-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accent-blue);
+    background: var(--accent-blue-light);
+    padding: 2px 7px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    height: fit-content;
+    margin-top: 2px;
+  }
+  .faq-a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    padding-left: 36px;
+  }
+
+  @media (max-width: 720px) {
+    .poster { padding: 28px 18px; }
+    .obs-cards { grid-template-columns: 1fr; }
+    .comparison { grid-template-columns: 1fr; gap: 10px; }
+    .comp-arrow { display: none; }
+    .rm-columns { grid-template-columns: 1fr; }
+    .rm-item { grid-template-columns: 100px 1fr; }
+    .rm-img-placeholder { width: 100px; height: 100px; }
+    .header h1 { font-size: 24px; }
+    .benefits { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- ========== HEADER ========== -->
+  <div class="header">
+    <div class="eyebrow">Pre-training · Knowledge Context</div>
+    <h1>将<span class="hl">知识语境</span>引入大模型预训练</h1>
+    <div class="core-thesis">
+      <div class="ct-text">让模型学习知识成立的条件，而非仅学习知识本身</div>
+      <div class="ct-sub">不仅建模"说了什么"，还建模"谁说的、何时说的、通过什么渠道说的"</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1: OBSERVATION ========== -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num blue">1</span>
+      <span class="section-title">观察</span>
+      <span class="section-line"></span>
+    </div>
+    <p class="section-desc">现实世界的信息同时具备<strong style="color:var(--accent-orange)">语义</strong>和<strong style="color:var(--accent-blue)">语境</strong>两个维度。语义对应文本传达的具体内容，语境则描述这段内容产生的背景条件，包括由谁发布、通过什么载体传播、在多长时间内有效。同一条知识在不同语境下，其可信度、适用范围和时效性可能完全不同。</p>
+
+    <div class="obs-cards">
+      <div class="obs-card c1">
+        <div class="card-zone sem">
+          <div class="card-zone-label">语义 Semantics</div>
+          <div class="card-content">牛顿第二定律 F = ma，物体所受合力等于其质量与加速度的乘积</div>
+        </div>
+        <div class="card-zone ctx">
+          <div class="card-zone-label">语境 Context</div>
+          <div class="ctx-tags">
+            <span class="ctx-tag"><span class="tl">源</span>人民教育出版社</span>
+            <span class="ctx-tag"><span class="tl">载体</span>教科书</span>
+            <span class="ctx-tag"><span class="tl">时效</span>长期有效</span>
+          </div>
+        </div>
+      </div>
+      <div class="obs-card c2">
+        <div class="card-zone sem">
+          <div class="card-zone-label">语义 Semantics</div>
+          <div class="card-content">小米发布新款手机，搭载新一代骁龙处理器，售价 3999 元起</div>
+        </div>
+        <div class="card-zone ctx">
+          <div class="card-zone-label">语境 Context</div>
+          <div class="ctx-tags">
+            <span class="ctx-tag"><span class="tl">源</span>新浪微博</span>
+            <span class="ctx-tag"><span class="tl">载体</span>社交媒体</span>
+            <span class="ctx-tag"><span class="tl">时效</span>短期</span>
+          </div>
+        </div>
+      </div>
+      <div class="obs-card c3">
+        <div class="card-zone sem">
+          <div class="card-zone-label">语义 Semantics</div>
+          <div class="card-content">北京市气象台发布大雪预警，预计降雪量 10mm 以上，请注意出行安全</div>
+        </div>
+        <div class="card-zone ctx">
+          <div class="card-zone-label">语境 Context</div>
+          <div class="ctx-tags">
+            <span class="ctx-tag"><span class="tl">源</span>北京气象台</span>
+            <span class="ctx-tag"><span class="tl">载体</span>新闻</span>
+            <span class="ctx-tag"><span class="tl">时效</span>数日</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register theory grounding -->
+    <div class="theory-callout">
+      <div class="tc-icon">R</div>
+      <div>
+        <div class="tc-text">
+          语境对信息的重要性在语言学中已有成熟的理论支撑。Halliday 的<strong>语域理论</strong>（Register Theory）指出，语言的使用随情景语境而变化，而情景语境可以通过三个维度来刻画：<strong>语场</strong>（Field，话题与活动类型）、<strong>语旨</strong>（Tenor，参与者之间的关系）、<strong>语式</strong>（Mode，语言传播的渠道与媒介）。这意味着即使语义内容相同，不同的语场、语旨、语式组合会产生不同的语域，进而改变文本的功能和解读方式。知识语境可以看作语域理论在预训练场景中的一种操作化实现，将语境从语言学概念转化为可以被模型编码的结构化信号。
+        </div>
+        <div class="tc-ref">Halliday, M.A.K. (1978). Language as Social Semiotic. London: Edward Arnold.</div>
+        <div class="register-mapping">
+          <div class="reg-map-item">语场 Field <span class="reg-map-arrow">→</span> <span class="reg-map-hl">内容形态</span></div>
+          <div class="reg-map-item">语旨 Tenor <span class="reg-map-arrow">→</span> <span class="reg-map-hl">来源权威性</span></div>
+          <div class="reg-map-item">语式 Mode <span class="reg-map-arrow">→</span> <span class="reg-map-hl">传播载体</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2: PROBLEM ========== -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num orange">2</span>
+      <span class="section-title">问题与目标</span>
+      <span class="section-line"></span>
+    </div>
+    <p class="section-desc">当前预训练将语料处理为纯文本序列，模型仅在语义层面进行建模，来源、载体、时效等语境信息在预处理阶段未被保留。我们希望探索一种语境与语义联合建模的方式，使模型在预训练阶段即可感知每条知识的语境属性。</p>
+
+    <div style="text-align:center; margin-bottom:22px;">
+      <div style="display:inline-block; padding:10px 28px; background:var(--accent-orange-light); border:1px solid var(--accent-orange-mid); border-radius:6px;">
+        <div style="font-family:'Noto Serif SC',serif; font-weight:700; font-size:14px; color:var(--accent-orange); line-height:1.6;">缩小模型与人类在信息获取方式上的结构性差异</div>
+        <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px; line-height:1.5;">人类在理解信息时，自然地将内容与其产生的语境关联判读<br>预训练过程应当保留数据中固有的语境结构，而非将其展平</div>
+      </div>
+    </div>
+
+    <div class="comparison">
+      <div class="comp-panel baseline">
+        <div class="comp-badge">当前做法</div>
+        <div class="comp-title">语义序列建模</div>
+        <div class="comp-desc">不同来源的文档被拼接为统一的 token 序列，模型在训练过程中无法区分各段文本所处的语境</div>
+        <div class="token-seq">
+          <span class="tk plain">牛顿定律</span>
+          <span class="tk sep">[SEP]</span>
+          <span class="tk plain">手机发布会</span>
+          <span class="tk sep">[SEP]</span>
+          <span class="tk plain">北京天气预报</span>
+          <span class="tk sep">…</span>
+        </div>
+        <div class="comp-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="14.5" r="1" fill="currentColor"/></svg>
+          语境信息未参与建模
+        </div>
+      </div>
+      <div class="comp-arrow">
+        <svg width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M0 8h20M16 3l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="comp-panel target">
+        <div class="comp-badge">研究目标</div>
+        <div class="comp-title">语境-语义联合表征</div>
+        <div class="comp-desc">将语境信息编码后与文本 token 共同输入模型，使每段文本的表征同时包含语义和语境信号</div>
+        <div class="token-seq">
+          <span class="tk cb">牛顿定律</span>
+          <span class="tk sep">[SEP]</span>
+          <span class="tk co">手机发布会</span>
+          <span class="tk sep">[SEP]</span>
+          <span class="tk cg">北京天气预报</span>
+          <span class="tk sep">…</span>
+        </div>
+        <div class="comp-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          语境标签以前缀形式拼接到文档 token 序列前，与文本共同输入 Transformer
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3: RESEARCH ROADMAP ========== -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num teal">3</span>
+      <span class="section-title">研究路线</span>
+      <span class="section-line"></span>
+    </div>
+    <p class="section-desc">围绕上述目标，我们从<strong>模型</strong>和<strong>数据</strong>两个方向展开了一系列递进式研究。</p>
+
+    <!-- Two column headers -->
+    <div class="rm-columns">
+      <div><div class="rm-col-head model">模型视角</div></div>
+      <div><div class="rm-col-head data">数据视角</div></div>
+    </div>
+
+    <!-- Model: Research 1 -->
+    <div class="rm-item blue">
+      <div class="rm-img-placeholder">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="1" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M1 14l5-5 3 3 4-4 6 6" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="13" cy="6" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+        KoCo 方法示意图
+      </div>
+      <div class="rm-text">
+        <div class="rm-label">模型 · 研究一</div>
+        <div class="rm-name">KoCo <span class="rm-tag acl">ACL 2026</span></div>
+        <div class="rm-desc">作为初步验证，我们将语料通过三个分类器映射到来源、形态、稳定性构成的离散坐标空间，将坐标编码为文本标签并以前缀形式拼接到文档前输入模型。实验表明，即便是粗粒度的离散语境信号，也能带来可观测的收敛加速，初步证实了语境建模的可行性。</div>
+      </div>
+    </div>
+
+    <div class="rm-connector">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M4 10l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      从外部标注到自监督
+    </div>
+
+    <!-- Model: Research 2 -->
+    <div class="rm-item blue">
+      <div class="rm-img-placeholder">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="1" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M1 14l5-5 3 3 4-4 6 6" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="13" cy="6" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+        CKE 方法示意图
+      </div>
+      <div class="rm-text">
+        <div class="rm-label">模型 · 研究二</div>
+        <div class="rm-name">CKE</div>
+        <div class="rm-desc">去除对外部分类器的依赖，通过自监督方式学习连续的语境表征，与语义表征联合建模，进一步提升下游任务表现。</div>
+      </div>
+    </div>
+
+    <div class="rm-connector">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M4 10l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      机理分析
+    </div>
+
+    <!-- Model: Research 3 -->
+    <div class="rm-item orange">
+      <div class="rm-img-placeholder">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="1" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M1 14l5-5 3 3 4-4 6 6" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="13" cy="6" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+        分析结果图
+      </div>
+      <div class="rm-text">
+        <div class="rm-label">模型 · 研究三</div>
+        <div class="rm-name">语境增益的机制分析与理论归因</div>
+        <div class="rm-desc">分析语境信号对表征空间的具体影响，验证语境收益随模型规模和数据量的可扩展性。</div>
+      </div>
+    </div>
+
+    <div style="height:24px;"></div>
+
+    <!-- Data: Research 1 -->
+    <div class="rm-item teal">
+      <div class="rm-img-placeholder">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="1" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M1 14l5-5 3 3 4-4 6 6" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="13" cy="6" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+        KnowDiv 数据集示意图
+      </div>
+      <div class="rm-text">
+        <div class="rm-label">数据 · 研究一</div>
+        <div class="rm-name">KnowDiv</div>
+        <div class="rm-desc">构建同一知识在不同语境下的多样性表达数据集，为语境维度的评估与对比提供基准。</div>
+      </div>
+    </div>
+
+    <div class="rm-connector">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M4 10l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      从验证到应用
+    </div>
+
+    <!-- Data: Research 2 -->
+    <div class="rm-item teal">
+      <div class="rm-img-placeholder">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="1" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M1 14l5-5 3 3 4-4 6 6" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="13" cy="6" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+        数据合成流程图
+      </div>
+      <div class="rm-text">
+        <div class="rm-label">数据 · 研究二</div>
+        <div class="rm-name">垂直数据合成方法</div>
+        <div class="rm-desc">沿知识的语境维度合成训练数据，从实验验证走向实际应用。</div>
+      </div>
+    </div>
+
+    <!-- Benefits -->
+    <div class="benefits">
+      <div class="bf-card">
+        <div class="bf-title"><span class="bf-dot bl"></span>降低对数据量和质量过滤的依赖</div>
+        <div class="bf-desc">语境信息为低质量数据提供了正确的背景，使其重新具有学习价值</div>
+      </div>
+      <div class="bf-card">
+        <div class="bf-title"><span class="bf-dot gr"></span>构建更稳健的知识表示</div>
+        <div class="bf-desc">通过语境区分知识的时效与适用边界，有助于缓解不同来源间的事实冲突</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4: FAQ ========== -->
+  <div class="section" style="margin-bottom:0;">
+    <div class="section-head">
+      <span class="section-num gray">Q</span>
+      <span class="section-title">常见问题</span>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-tag">Q1</span>
+          <span>知识语境与已有的元信息条件训练（如 MeCo）有什么区别？</span>
+        </div>
+        <div class="faq-a">
+          MeCo 将原始元数据（如 URL）直接作为前缀拼接到文档前，利用 URL 中隐含的域名、路径等信号来帮助模型区分数据来源，其核心目标是加速预训练收敛。知识语境关注的是一个不同的问题：我们希望模型能够感知知识本身成立的条件，包括知识的可信度、内容形态和时效性。为此，KoCo 将元数据抽象为结构化的语义坐标（来源 × 形态 × 稳定性），而非直接使用原始 URL。这种抽象使得语境表示具有跨域的可迁移性，也使得模型在推理时可以通过指定语境坐标来控制生成行为。两者在技术实现上有相似之处（都采用前缀条件训练），但出发点和建模对象不同。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-tag">Q2</span>
+          <span>推理阶段是否需要提供语境标签？如果不提供会怎样？</span>
+        </div>
+        <div class="faq-a">
+          在 KoCo 中，我们采用了与 MeCo 类似的 cooldown 策略：训练后期移除语境前缀进行微调，使模型在无语境输入时也能正常工作。实验表明，经过 cooldown 的模型在不提供语境标签时性能不低于标准预训练基线，而在提供语境标签时则获得额外增益。这意味着语境条件是一种可选的增强信号，而非推理阶段的硬性依赖。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-tag">Q3</span>
+          <span>分类器的准确率对最终效果影响有多大？如果分类存在噪声怎么办？</span>
+        </div>
+        <div class="faq-a">
+          我们在实验中观察到，即使分类器存在一定程度的噪声，模型仍然能够从语境信号中获益。这可能是因为预训练本身具有较强的容错能力：大量数据上的统计学习可以部分平滑掉个别样本的分类错误。此外，KoCo 使用的是粗粒度坐标（每个轴只有 3-5 个类别），降低了分类难度。后续研究（CKE）则完全绕开了显式分类器，转而通过自监督学习获取连续语境表征，从根本上避免了分类噪声的问题。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-tag">Q4</span>
+          <span>为什么不直接使用原始 URL 或域名，而要抽象为离散坐标？</span>
+        </div>
+        <div class="faq-a">
+          直接使用 URL 的优点是实现简单，且已被证明有效（如 MeCo）。但 URL 是一种面向来源的标识，不同 URL 可能对应相同的知识层级（例如两个不同的教育类网站），而同一域名下也可能包含性质差异很大的内容。知识语境坐标是对这些原始信号的语义抽象，试图回答"这段文本处于什么样的知识层级"而非"这段文本来自哪个网站"。这种抽象的代价是引入了分类器，但换来了更清晰的语义结构和跨数据源的可迁移性。
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

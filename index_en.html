@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yudong Li</title>
+    <meta
+      name="description"
+      content="Personal homepage of Yudong Li, Assistant Researcher at the Department of Electronic Engineering, Tsinghua University, working on large-model pre-training and Knowledge Context."
+    />
+    <link rel="canonical" href="https://ydli-ai.github.io/index_en.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yudong Li" />
+    <meta
+      property="og:description"
+      content="Assistant Researcher at Tsinghua EE. Research on large-model pre-training and Knowledge Context."
+    />
+    <meta property="og:url" content="https://ydli-ai.github.io/index_en.html" />
+    <meta property="og:image" content="assets/images/avatar.jpg" />
+    <link rel="icon" href="assets/images/placeholder.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="nav" aria-label="Primary">
+      <div class="nav-inner">
+        <a href="#" class="nav-brand">Yudong Li</a>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="#about">About</a></li>
+          <li class="nav-item"><a href="#publications">Selected Publications</a></li>
+          <li><a href="index.html" class="lang-toggle" hreflang="zh-CN">中文</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Floating projects sidebar (visible on wide viewports) -->
+    <aside class="projects-sidebar" aria-label="Research projects">
+      <h4>Projects</h4>
+      <ul>
+        <li><a href="poster_v8.html">Knowledge Context</a></li>
+        <!-- Add new projects here: <li><a href="...">Project Name</a></li> -->
+      </ul>
+      <p class="sidebar-hint">Click to view details</p>
+    </aside>
+
+    <main>
+      <!-- ============ About ============ -->
+      <section id="about">
+        <div class="hero">
+          <div class="hero-avatar">
+            <img src="assets/images/avatar.jpg" alt="Portrait of Yudong Li" />
+          </div>
+          <div class="hero-body">
+            <h1 class="hero-name">Yudong Li</h1>
+            <p class="hero-title">
+              Assistant Researcher · Department of Electronic Engineering, Tsinghua University
+            </p>
+            <p class="hero-contact">
+              <a href="mailto:liyudong123@hotmail.com">liyudong123@hotmail.com</a>
+            </p>
+            <ul class="hero-links">
+              <li>
+                <a
+                  href="https://github.com/ydli-ai"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://scholar.google.com/citations?user=j4EmuqkAAAAJ"
+                  target="_blank"
+                  rel="noopener"
+                  >Google Scholar</a
+                >
+              </li>
+              <li>
+                <a href="mailto:liyudong123@hotmail.com">Email</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="about-bio">
+          I received my B.Eng. from Central South University and my Ph.D. from Shenzhen University.
+          My research focuses on large-model pre-training, currently centered on
+          <strong>Knowledge Context</strong>: exploring how to incorporate contextual
+          information into pre-training so that models learn not only knowledge itself,
+          but also the conditions under which such knowledge holds.
+        </p>
+        <p class="about-bio">
+          Previously, I worked extensively on model frameworks, training methods and evaluation
+          data, and am a core contributor of
+          <a href="https://github.com/dbiir/UER-py" target="_blank" rel="noopener">UER-py</a>,
+          <a href="https://github.com/Tencent/TencentPretrain" target="_blank" rel="noopener">TencentPretrain</a>,
+          <a href="https://github.com/CVI-SZU/Linly" target="_blank" rel="noopener">Linly</a>,
+          <a href="https://github.com/CLUEbenchmark/CLUE" target="_blank" rel="noopener">CLUE Benchmark</a>,
+          <a href="https://github.com/ydli-ai/CSL" target="_blank" rel="noopener">CSL</a>,
+          and other open-source projects. My broader interests include data engineering and synthetic
+          data for large language models.
+        </p>
+
+        <p class="hero-notice">
+          I am looking for academic and industry collaborators for the
+          <strong>Knowledge Context</strong> research program — feel free to reach out.
+        </p>
+      </section>
+
+      <!-- ============ Publications ============ -->
+      <section id="publications">
+        <h2>Selected Publications</h2>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: -0.5rem">
+          Full list on
+          <a
+            href="https://scholar.google.com/citations?user=j4EmuqkAAAAJ"
+            target="_blank"
+            rel="noopener"
+            >Google Scholar</a
+          >.
+        </p>
+
+        <div class="pub-group">
+          <!-- 1. KoCo -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/koco.jpg" alt="KoCo" />
+              <span class="pub-tag">ACL 2026</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://arxiv.org/pdf/2604.12397" target="_blank" rel="noopener"
+                  >KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates</a
+                >
+              </h4>
+              <p class="pub-authors">
+                <span class="me">Yudong Li</span>, Jiawei Cai, Linlin Shen
+              </p>
+              <p class="pub-venue">
+                The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/pdf/2604.12397" target="_blank" rel="noopener">PDF</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2. OncoCoT -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/oncocot.png" alt="OncoCoT" />
+              <span class="pub-tag">AAAI 2026 <span class="pub-tag-oral">(Oral)</span></span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40724/44685" target="_blank" rel="noopener"
+                  >OncoCoT: A Temporal-causal Chain-of-Thought Dataset for Oncologic Decision-Making</a
+                >
+              </h4>
+              <p class="pub-authors">
+                Peiru Yang, <span class="me">Yudong Li</span>, Shiting Wang, Xinyi Liu, Haotian Gan, Xintian Li, Qingyu Gao, Yongfeng Huang
+              </p>
+              <p class="pub-venue">
+                Proceedings of the AAAI Conference on Artificial Intelligence (AAAI 2026)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/40724/44685" target="_blank" rel="noopener">PDF</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3. FLIP-80M -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/flip.jpg" alt="FLIP-80M" />
+              <span class="pub-tag">ACM MM 2024 <span class="pub-tag-oral">(Oral)</span></span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3664647.368128" target="_blank" rel="noopener"
+                  >FLIP-80M: 80 Million Visual-Linguistic Pairs for Facial Language-Image Pre-Training</a
+                >
+              </h4>
+              <p class="pub-authors">
+                <span class="me">Yudong Li</span>, Xianxu Hou, Zheng Dezhi, Linlin Shen, Zhe Zhao
+              </p>
+              <p class="pub-venue">
+                Proceedings of the 32nd ACM International Conference on Multimedia (ACM MM 2024)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://dl.acm.org/doi/pdf/10.1145/3664647.368128" target="_blank" rel="noopener">PDF</a></li>
+                <li><a href="https://github.com/ydli-ai/FLIP" target="_blank" rel="noopener">Code</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 4. Dynamic data sampler (Linly) -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/linly_logo.png" alt="Linly" />
+              <span class="pub-tag">ICASSP 2024</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://arxiv.org/pdf/2405.10626" target="_blank" rel="noopener"
+                  >Dynamic Data Sampler for Cross-Language Transfer Learning in Large Language Models</a
+                >
+              </h4>
+              <p class="pub-authors">
+                <span class="me">Yudong Li</span>, Yuhao Feng, Wen Zhou, Zhe Zhao, Linlin Shen, Cheng Hou, Xianxu Hou
+              </p>
+              <p class="pub-venue">
+                2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2024)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/pdf/2405.10626" target="_blank" rel="noopener">PDF</a></li>
+                <li><a href="https://github.com/CVI-SZU/Linly" target="_blank" rel="noopener">Code (3.1k stars)</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 5. TencentPretrain -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/tencentpretrain.jpg" alt="TencentPretrain" />
+              <span class="pub-tag">ACL 2023</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://aclanthology.org/2023.acl-demo.20.pdf" target="_blank" rel="noopener"
+                  >TencentPretrain: A Scalable and Flexible Toolkit for Pre-training Models of Different Modalities</a
+                >
+              </h4>
+              <p class="pub-authors">
+                Zhe Zhao, <span class="me">Yudong Li</span>, Cheng Hou, Jing Zhao, Rong Tian, Weijie Liu, Yiren Chen, Ningyuan Sun, Haoyan Liu, et al.
+              </p>
+              <p class="pub-venue">
+                Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (ACL 2023)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://aclanthology.org/2023.acl-demo.20.pdf" target="_blank" rel="noopener">PDF</a></li>
+                <li><a href="https://github.com/Tencent/TencentPretrain" target="_blank" rel="noopener">Code (1.1k stars)</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 6. CSL -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/csl.jpg" alt="CSL" />
+              <span class="pub-tag">COLING 2022</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://aclanthology.org/2022.coling-1.344.pdf" target="_blank" rel="noopener"
+                  >CSL: A Large-scale Chinese Scientific Literature Dataset</a
+                >
+              </h4>
+              <p class="pub-authors">
+                <span class="me">Yudong Li</span>, Yuqing Zhang, Zhe Zhao, Linlin Shen, Weijie Liu, Weiquan Mao, Hui Zhang
+              </p>
+              <p class="pub-venue">
+                Proceedings of the 29th International Conference on Computational Linguistics (COLING 2022)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://aclanthology.org/2022.coling-1.344.pdf" target="_blank" rel="noopener">PDF</a></li>
+                <li><a href="https://github.com/ydli-ai/CSL" target="_blank" rel="noopener">Code (664 stars)</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 7. Talk2face -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/talk2face.jpg" alt="Talk2face" />
+              <span class="pub-tag">ACM MM 2022</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://drive.google.com/file/u/0/d/1T4lFPELXvmusgJhTyLzP0EBWXE-6Wv0H/view" target="_blank" rel="noopener"
+                  >Talk2Face: A Unified Sequence-based Framework for Diverse Face Generation and Analysis Tasks</a
+                >
+              </h4>
+              <p class="pub-authors">
+                <span class="me">Yudong Li</span>, Xianxu Hou, Zhe Zhao, Linlin Shen, Xuefeng Yang, Kimmo Yan
+              </p>
+              <p class="pub-venue">
+                Proceedings of the 30th ACM International Conference on Multimedia (ACM MM 2022)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://drive.google.com/file/u/0/d/1T4lFPELXvmusgJhTyLzP0EBWXE-6Wv0H/view" target="_blank" rel="noopener">PDF</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 8. CLUE -->
+          <article class="pub">
+            <div class="pub-thumb">
+              <img src="assets/images/clue.jpg" alt="CLUE" />
+              <span class="pub-tag">COLING 2020</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">
+                <a href="https://aclanthology.org/2020.coling-main.419.pdf" target="_blank" rel="noopener"
+                  >CLUE: A Chinese Language Understanding Evaluation Benchmark</a
+                >
+              </h4>
+              <p class="pub-authors">
+                Liang Xu, Hai Hu, Xuanwei Zhang, Lu Li, Chenjie Cao, <span class="me">Yudong Li</span>, Yechen Xu, et al.
+              </p>
+              <p class="pub-venue">
+                Proceedings of the 28th International Conference on Computational Linguistics (COLING 2020)
+              </p>
+              <ul class="pub-links">
+                <li><a href="https://aclanthology.org/2020.coling-main.419.pdf" target="_blank" rel="noopener">PDF</a></li>
+                <li><a href="https://github.com/CLUEbenchmark/CLUE" target="_blank" rel="noopener">Code (4.2k stars)</a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="year">2026</span> Yudong Li &nbsp;·&nbsp; Last updated 2026.
+      </p>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
