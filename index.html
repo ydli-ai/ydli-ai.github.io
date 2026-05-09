@@ -17,7 +17,7 @@
     />
     <meta property="og:url" content="https://ydli-ai.github.io/" />
     <meta property="og:image" content="assets/images/avatar.jpg" />
-    <link rel="icon" href="assets/images/placeholder.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
@@ -122,11 +122,15 @@
         <p class="about-bio">
           我本科毕业于中南大学，博士毕业于深圳大学。主要研究方向为<strong>大模型预训练，包括预训练方法、数据工程与合成数据</strong>，是
           <a href="https://github.com/dbiir/UER-py" target="_blank" rel="noopener">UER-py</a>、<a href="https://github.com/Tencent/TencentPretrain" target="_blank" rel="noopener">TencentPretrain</a>、<a href="https://github.com/CVI-SZU/Linly" target="_blank" rel="noopener">Linly</a>、<a href="https://github.com/CLUEbenchmark/CLUE" target="_blank" rel="noopener">CLUE Benchmark</a>、<a href="https://github.com/ydli-ai/CSL" target="_blank" rel="noopener">CSL</a>
-          等开源项目的核心作者。当前，我聚焦于<strong>知识语境（Knowledge Context）</strong>研究，探索如何将语境信息引入预训练过程，使模型在学习知识内容的同时感知知识成立的条件。
+          等开源项目的核心作者。当前我聚焦于<strong>知识语境（Knowledge Context）</strong>研究，探索如何将数据的语境信息引入预训练过程，提升LLM预训练的数据效能。
         </p>
 
         <p class="hero-notice">
-          我正在为<strong>知识语境</strong>系列研究寻找学术界和工业界的合作伙伴，欢迎联系。
+          我正在为<strong><a href="#knowledge-context" style="text-decoration: underline; color: inherit;">知识语境</a></strong>系列研究寻找合作伙伴，欢迎联系。
+        </p>
+
+        <p class="hero-news">
+          <span>News:</span> 我们最近发布了一篇综述文章 <a href="https://zhuanlan.zhihu.com/p/2032080549381190858" target="_blank" rel="noopener">《LLM预训练数据工程的最佳实践》</a>。
         </p>
       </section>
 
@@ -353,7 +357,6 @@
               <h1>将<span class="hl">知识语境</span>引入大模型预训练</h1>
               <div class="core-thesis">
                 <div class="ct-text">让模型学习知识成立的条件，而非仅学习知识本身</div>
-                <div class="ct-sub">不仅建模"说了什么"，还建模"谁说的、何时说的、通过什么渠道说的"</div>
               </div>
             </div>
 
@@ -363,7 +366,7 @@
                 <span class="section-title">观察</span>
                 <span class="section-line"></span>
               </div>
-              <p class="section-desc">在现实世界中，文本信息由<strong style="color:var(--accent-orange)">语义</strong>和<strong style="color:var(--accent-blue)">语境</strong>两个维度构成。语义对应文本传达的具体内容，语境则描述这段内容产生的背景条件，包括由谁发布、通过什么载体传播、在多长时间内有效。同一条知识在不同语境下，其可信度、适用范围和时效性可能完全不同。</p>
+              <p class="section-desc">在现实世界中，人类获取信息时天然依赖语境，而文本信息也由<strong style="color:var(--accent-orange)">语义</strong>和<strong style="color:var(--accent-blue)">语境</strong>两个维度构成。语义对应文本的具体内容，语境则描述这段内容产生的背景条件，包括由谁发布、通过什么载体传播、在多长时间内有效。同一条知识在不同语境下，其可信度、适用范围和时效性可能完全不同。当前预训练主要让模型学习纯文本序列，这与人类在语境中理解知识的方式存在显著差异。</p>
 
               <div class="obs-cards">
                 <div class="obs-card c1">
@@ -414,12 +417,12 @@
                 <div class="tc-icon">R</div>
                 <div>
                   <div class="tc-text">
-                    语境对信息的重要性在语言学中已有成熟的理论支撑。Halliday 的<strong>语域理论</strong>（Register Theory）指出，语言的使用随情景语境而变化，而情景语境可以通过三个维度来刻画：<strong>语场</strong>（Field，话题与活动类型）、<strong>语旨</strong>（Tenor，参与者之间的关系）、<strong>语式</strong>（Mode，语言传播的渠道与媒介）。这意味着即使语义内容相同，不同的语场、语旨、语式组合会产生不同的语域，进而改变文本的功能和解读方式。知识语境可以看作语域理论在预训练场景中的一种操作化实现，将语境从语言学概念转化为可以被模型编码的结构化信号。
+                    语境对信息的重要性在语言学中已有成熟的理论支撑。Halliday 的<strong>语域理论</strong>（Register Theory）指出，语言的使用随情景语境而变化，而情景语境可以通过三个维度来刻画：<strong>语场</strong>（Field，话题与活动类型）、<strong>语旨</strong>（Tenor，参与者之间的关系）、<strong>语式</strong>（Mode，语言传播的渠道与媒介）。这意味着即使语义内容相同，不同的语场、语旨、语式组合会产生不同的语域，进而改变文本的功能和解读方式。
                   </div>
                   <div class="tc-ref">Halliday, M.A.K. (1978). Language as Social Semiotic. London: Edward Arnold.</div>
                   <div class="register-mapping">
                     <div class="reg-map-item">语场 Field <span class="reg-map-arrow">→</span> <span class="reg-map-hl">内容形态</span></div>
-                    <div class="reg-map-item">语旨 Tenor <span class="reg-map-arrow">→</span> <span class="reg-map-hl">来源权威性</span></div>
+                    <div class="reg-map-item">语旨 Tenor <span class="reg-map-arrow">→</span> <span class="reg-map-hl">来源</span></div>
                     <div class="reg-map-item">语式 Mode <span class="reg-map-arrow">→</span> <span class="reg-map-hl">传播载体</span></div>
                   </div>
                 </div>
@@ -432,12 +435,12 @@
                 <span class="section-title">科学问题与研究目标</span>
                 <span class="section-line"></span>
               </div>
-              <p class="section-desc">当前预训练将语料处理为纯文本序列，模型仅获取信息在语义的投影。信息来源、载体、时效等语境信息在预处理阶段被抛弃。我们希望建立有效的语境表征方法，从而构建语境-语义联合表示，使模型在预训练阶段即可显式感知每条知识的语境属性，从而界定知识的适用边界与可信层级。</p>
+              <p class="section-desc">当前预训练将语料处理为纯文本序列，模型仅获取信息在语义的投影。信息来源、载体、时间等元信息在预处理阶段被抛弃，使模型难以像人类一样在语境中理解知识。我们希望建立有效的语境表征方法，从而构建语境-语义联合表示，使模型在预训练阶段即可显式感知每条知识的语境属性，从而界定知识的适用边界与可信层级。</p>
 
               <div style="text-align:center; margin-bottom:22px;">
                 <div style="display:inline-block; padding:10px 28px; background:var(--accent-orange-light); border:1px solid var(--accent-orange-mid); border-radius:6px;">
                   <div style="font-family:'Noto Serif SC',serif; font-weight:700; font-size:14px; color:var(--accent-orange); line-height:1.6;">缩小模型与人类在信息获取方式上的差异</div>
-                  <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px; line-height:1.5;">人类在理解信息时，自然地将内容与其产生的语境关联判读<br>预训练过程应当保留数据中固有的语境结构</div>
+                  <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px; line-height:1.5;">人类在理解信息时，自然地将内容与其产生的语境关联<br>预训练过程应当保留数据中固有的语境结构</div>
                 </div>
               </div>
 
@@ -502,23 +505,23 @@
                 <div class="rm-text">
                   <div class="rm-label">模型 · 研究一</div>
                   <div class="rm-name">KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates <span class="rm-tag acl">ACL 2026</span></div>
-                  <div class="rm-desc">作为初步验证知识语境的可行性，KoCo提出知识语境坐标，将将语料通过三个分类器映射到来源、形态、稳定性构成的离散坐标空间，将坐标编码为文本标签并以前缀形式拼接到文档前输入模型。实验表明，即便是粗粒度的离散语境信号，也能带来可观测的收敛加速和性能提升，初步证实了语境建模的可行性。</div>
+                  <div class="rm-desc">KoCo提出知识语境坐标，将语料通过分类器映射到来源、形态、稳定性构成的离散坐标空间，作为文本标签拼接到文档前缀输入模型。实验结果表明，即便是粗粒度的离散语境信号，也能带来可观测的收敛加速和性能提升，验证了语境建模的可行性。</div>
                 </div>
               </div>
 
               <div class="rm-connector">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M4 10l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                从外部标注到自监督
+                语境信号从外部标注到自监督
               </div>
 
               <div class="rm-item blue">
                 <div class="rm-img-placeholder">
-                  <img src="assets/images/research.jpg" alt="CKE 方法示意图" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+                  <img src="assets/images/cke.png" alt="CKE 方法示意图" style="width: 100%; height: 100%; object-fit: cover; display: block" />
                 </div>
                 <div class="rm-text">
                   <div class="rm-label">模型 · 研究二</div>
-                  <div class="rm-name">CKE</div>
-                  <div class="rm-desc">消除Koco对外部分类器的依赖，构建自监督的语境建模方法，从而建立连续的语境表征，与语义表征联合建模，进一步提升下游任务表现。</div>
+                  <div class="rm-name">Learning Knowledge Context from URLs for Language Model Pretraining</div>
+                  <div class="rm-desc">利用URL-content配对数据进行对比学习构建网页文档的语境表征，并映射为连续的soft tokens。相比原始URL，连续语境表征能够更有效地利用来自网页元信息的语境信号，进一步改善训练过程和评估表现。</div>
                 </div>
               </div>
 
@@ -640,7 +643,7 @@
 
     <footer>
       <p>
-        &copy; <span id="year">2026</span> 李煜东 Yudong Li &nbsp;·&nbsp; 最近更新于 2026 年 4 月
+        &copy; <span id="year">2026</span> 李煜东 Yudong Li &nbsp;·&nbsp; 最近更新于 2026 年 5 月
       </p>
     </footer>
 
