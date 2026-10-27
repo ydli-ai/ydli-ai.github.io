@@ -95,11 +95,11 @@ section[id] { scroll-margin-top:105px; }
 .hero-news { margin-top:24px; }
 .hero-news h2 { margin:0 0 9px; font-family:inherit; font-size:1rem; font-weight:600; }
 .news-list { list-style:none; margin:0; padding:0; }
-.news-list li { display:grid; grid-template-columns:92px minmax(0,1fr); gap:16px; padding:7px 0; border-bottom:1px solid #edf0f2; }
+.news-list li { display:grid; grid-template-columns:max-content minmax(0,1fr); column-gap:16px; padding:7px 0; border-bottom:1px solid #edf0f2; }
 .news-list li:last-child { border-bottom:0; }
 .hero-news .news-date { color:#87929c; font-size:.82rem; font-weight:400; padding-top:2px; }
 @media(max-width:460px) {
-  .news-list li { grid-template-columns:76px minmax(0,1fr); gap:10px; }
+  .news-list li { grid-template-columns:max-content minmax(0,1fr); column-gap:12px; }
   .hero-news .news-date { font-size:.76rem; }
 }
 
