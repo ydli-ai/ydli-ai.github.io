@@ -18,30 +18,19 @@
     <meta property="og:url" content="https://ydli-ai.github.io/" />
     <meta property="og:image" content="assets/images/avatar.jpg" />
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header class="nav" aria-label="主导航">
       <div class="nav-inner">
-        <a href="#about" class="nav-brand">李煜东 · Yudong Li</a>
+        <nav class="nav-links" aria-label="主导航">
+          <a href="index.html" aria-current="page">About</a>
+          <a href="publications.html">Publications</a>
+        </nav>
       </div>
     </header>
 
-    <aside class="page-sidebar" aria-label="页面目录">
-      <h4>目录</h4>
-      <ul>
-        <li><a href="#about">简介</a></li>
-        <li><a href="#research-overview">研究概览</a></li>
-        <li><a href="#open-source">开源项目</a></li>
-        <li><a href="#publications">学术成果</a></li>
-        <li><a href="#knowledge-context">当前研究</a></li>
-      </ul>
-      <p class="sidebar-hint">点击可直接跳转到对应小节。</p>
-    </aside>
+
 
     <main>
       <!-- ============ 简介 ============ -->
@@ -115,37 +104,36 @@
         </div>
 
         <p class="about-bio">
-          我的研究聚焦于<strong>大模型预训练数据工程与数据效能</strong>，我是
+          我的研究聚焦于<strong>预训练数据工程（Data-centric AI）</strong>，我也是
           <a href="https://github.com/dbiir/UER-py" target="_blank" rel="noopener">UER-py</a>、<a href="https://github.com/Tencent/TencentPretrain" target="_blank" rel="noopener">TencentPretrain</a>、<a href="https://github.com/CVI-SZU/Linly" target="_blank" rel="noopener">Linly</a>、<a href="https://github.com/CLUEbenchmark/CLUE" target="_blank" rel="noopener">CLUE Benchmark</a>、<a href="https://github.com/ydli-ai/CSL" target="_blank" rel="noopener">CSL</a>
           等项目的作者。
         </p>
 
-        <p class="hero-notice">
-          求职中，欢迎通过邮件联系。
-        </p>
-
-        <p class="hero-news">
-          <span>News:</span> 我们最近发布了一篇综述文章 <a href="https://zhuanlan.zhihu.com/p/2032080549381190858" target="_blank" rel="noopener">《LLM预训练数据工程的最佳实践》</a>。
-        </p>
+        <div class="hero-news" aria-labelledby="news-title">
+          <h2 id="news-title">News</h2>
+          <ul class="news-list">
+            <li><time class="news-date" datetime="2026-09-24">2026-09-24</time><span>我们的 1 篇论文被 NeurIPS 2026 录用。</span></li>
+            <li><time class="news-date" datetime="2026-09-23">2026-09-23</time><span>我们的 <a href="https://arxiv.org/abs/2609.27510" target="_blank" rel="noopener">Uncheatable Eval</a> 被 Qwen3.8 技术报告引用，并被 Marin 预训练实验用作直播指标。</span></li>
+            <li><time class="news-date" datetime="2026-08-20">2026-08-20</time><span>我们的 2 篇论文被 EMNLP 2026 录用。</span></li>
+            <li><time class="news-date" datetime="2026-05-08">2026-05-08</time><span>发布综述文章 <a href="https://zhuanlan.zhihu.com/p/2032080549381190858" target="_blank" rel="noopener">《LLM预训练数据工程的最佳实践》</a>。</span></li>
+          </ul>
+        </div>
       </section>
 
       <!-- ============ 研究概览 ============ -->
       <section id="research-overview">
-        <h2>研究方向与代表工作</h2>
+        <h2>研究概览</h2>
         <p class="section-lead">
         </p>
         <figure class="research-visual research-visual--timeline">
           <div class="research-visual-frame">
-            <a href="assets/images/research-timeline.png" target="_blank" rel="noopener" aria-label="查看研究方向与代表工作大图">
-              <img
-                src="assets/images/research-timeline.png"
-                alt=""
-                width="2200"
-                height="1086"
-              />
-            </a>
+            <img
+              src="assets/images/research-timeline.png"
+              alt="研究方向与代表工作概览"
+              width="2200"
+              height="1086"
+            />
           </div>
-          <figcaption>研究方向与代表工作概览。点击图片可查看大图。</figcaption>
         </figure>
       </section>
 
@@ -178,7 +166,7 @@
 
       <!-- ============ 代表工作 ============ -->
       <section id="publications">
-        <h2>代表性学术成果</h2>
+        <h2>代表性成果</h2>
         <p style="color: var(--muted); font-size: 0.9rem; margin-top: -0.5rem">
           完整列表见
           <a
@@ -392,22 +380,20 @@
       </section>
 
       <section id="knowledge-context">
-        <h2>当前研究：预训练数据表示工程</h2>
-        <p class="section-lead">
-        </p>
+        <h2>当前研究</h2>
+        <p class="section-lead">国自然青年基金资助项目：知识语境驱动的大模型高数据效能预训练方法</p>
         <figure class="research-visual research-visual--poster">
           <div class="research-visual-frame">
-            <a href="assets/images/research-poster.png" target="_blank" rel="noopener" aria-label="查看预训练数据表示工程研究海报大图">
+            <a href="assets/images/research-poster.png?v=20260910" target="_blank" rel="noopener" aria-label="查看预训练数据表示工程研究海报大图">
               <img
-                src="assets/images/research-poster.png"
-                alt=""
-                width="1462"
-                height="2200"
+                src="assets/images/research-poster.png?v=20260910"
+                alt="预训练数据表示工程研究框架"
+                width="1668"
+                height="2502"
                 loading="lazy"
               />
             </a>
           </div>
-          <figcaption>预训练数据表示工程研究框架。点击图片可查看大图。</figcaption>
         </figure>
       </section>
     </main>
